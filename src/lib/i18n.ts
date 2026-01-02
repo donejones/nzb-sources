@@ -14,6 +14,7 @@ export const strings = {
       navmoderated: 'Moderated Indexers',
       navpublic: 'Public Indexers',
       navspotweb: 'Spotweb Indexers',
+      navforums: 'Forums',
       deals: 'Provider Deals',
       guide: 'Usenet Guide (DE)',
       discord: 'Usenet',
@@ -37,6 +38,11 @@ export const strings = {
       crypto: 'Crypto',
       content: 'Content',
     },
+    forumHeaders: {
+      forum: 'Forum',
+      opened: 'Opens',
+      never: 'Never',
+    },
     nestedHeaders: {
       membership: 'Membership',
       apiDay: 'API/Day',
@@ -46,6 +52,7 @@ export const strings = {
     },
     actions: {
       searchPlaceholder: 'Search indexers...',
+      searchForumsPlaceholder: 'Search forums...',
       showAll: (n: number) => `Show memberships (${n})`,
       expandAll: 'Expand all memberships',
       collapseAll: 'Collapse all memberships',
@@ -83,9 +90,11 @@ export const strings = {
       application: 'Application',
       open: 'Open',
       invite: 'Invite',
+      'invite only': 'Invite only',
       'no-accounts': 'No accounts',
       'open-no-need': 'Open/no need',
       'open-weekends': 'Open on weekends',
+      closed: 'Closed',
       unknown: '?',
     },
     footer: {
@@ -119,6 +128,7 @@ export const strings = {
       navmoderated: 'Moderierte Indexer',
       navpublic: 'Öffentliche Indexer',
       navspotweb: 'Spotweb-Indexer',
+      navforums: 'Foren',
       deals: 'Anbieter-Angebote',
       guide: 'Usenet Guide (DE)',
       discord: 'Usenet',
@@ -143,6 +153,11 @@ export const strings = {
       crypto: 'Krypto',
       content: 'Inhalt',
     },
+    forumHeaders: {
+      forum: 'Forum',
+      opened: 'Öffnet',
+      never: 'Nie',
+    },
     nestedHeaders: {
       membership: 'Mitgliedschaft',
       apiDay: 'API/Tag',
@@ -152,6 +167,7 @@ export const strings = {
     },
     actions: {
       searchPlaceholder: 'Indexer suchen...',
+      searchForumsPlaceholder: 'Foren suchen...',
       showAll: (n: number) => `Mitgliedschaften anzeigen (${n})`,
       expandAll: 'Alle Mitgliedschaften aufklappen',
       collapseAll: 'Alle Mitgliedschaften zuklappen',
@@ -189,9 +205,11 @@ export const strings = {
       application: 'Bewerbung',
       open: 'Offen',
       invite: 'per Einladung',
+      'invite only': 'Nur auf Einladung',
       'no-accounts': 'Keine Konten',
       'open-no-need': 'Offen/keine Anmeldung',
       'open-weekends': 'Am Wochenende offen',
+      closed: 'Geschlossen',
       unknown: '?',
     },
     footer: {
@@ -218,8 +236,8 @@ export const strings = {
   },
 } as const;
 
-export function regLabel(lang: Lang, code: RegistrationCode) {
-  return strings[lang].registration[code] ?? strings[lang].registration.unknown;
+export function regLabel(lang: Lang, code: RegistrationCode | string) {
+  return (strings[lang].registration as Record<string, string>)[code] ?? strings[lang].registration.unknown;
 }
 
 export function fmtLimit(lang: Lang, v?: number | 'unlimited' | '?' | null) {
