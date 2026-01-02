@@ -14,6 +14,7 @@ export const strings = {
       navmoderated: 'Moderated Indexers',
       navpublic: 'Public Indexers',
       navspotweb: 'Spotweb Indexers',
+      navforums: 'Forums',
       deals: 'Provider Deals',
       guide: 'Usenet Guide (DE)',
       discord: 'Usenet',
@@ -37,6 +38,11 @@ export const strings = {
       crypto: 'Crypto',
       content: 'Content',
     },
+    forumHeaders: {
+    forum: 'Forum',
+    opened: 'Opens',
+    never: 'Never',
+    },
     nestedHeaders: {
       membership: 'Membership',
       apiDay: 'API/Day',
@@ -46,6 +52,7 @@ export const strings = {
     },
     actions: {
       searchPlaceholder: 'Search indexers...',
+      searchForumsPlaceholder: 'Search forums...',
       showAll: (n: number) => `Show memberships (${n})`,
       expandAll: 'Expand all memberships',
       collapseAll: 'Collapse all memberships',
@@ -119,6 +126,7 @@ export const strings = {
       navmoderated: 'Moderierte Indexer',
       navpublic: 'Öffentliche Indexer',
       navspotweb: 'Spotweb-Indexer',
+      navforums: 'Foren',
       deals: 'Anbieter-Angebote',
       guide: 'Usenet Guide (DE)',
       discord: 'Usenet',
@@ -143,6 +151,11 @@ export const strings = {
       crypto: 'Krypto',
       content: 'Inhalt',
     },
+    forumHeaders: {
+    forum: 'Forum',
+    opened: 'Öffnet',
+    never: 'Nie',
+    },
     nestedHeaders: {
       membership: 'Mitgliedschaft',
       apiDay: 'API/Tag',
@@ -152,6 +165,7 @@ export const strings = {
     },
     actions: {
       searchPlaceholder: 'Indexer suchen...',
+      searchForumsPlaceholder: 'Foren suchen...',
       showAll: (n: number) => `Mitgliedschaften anzeigen (${n})`,
       expandAll: 'Alle Mitgliedschaften aufklappen',
       collapseAll: 'Alle Mitgliedschaften zuklappen',
@@ -260,3 +274,4 @@ export function tApiKey(lang: Lang, key: apiLimit) {
   if (key === null) return strings[lang].api.unknown;
   return strings[lang].api[key] ?? strings[lang].api.unknown;
 }
+
