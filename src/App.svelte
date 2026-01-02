@@ -1,18 +1,18 @@
 <script lang="ts">
-  import Navbar from '@/lib/components/Navbar.svelte';
-  import DataTable from '@/lib/components/DataTable.svelte';
-  import ForumsTable from '@/lib/components/ForumsTable.svelte';
-  import ColorModeToggle from '@/lib/components/ColorModeToggle.svelte';
-  import ScrollTop from '@/lib/components/ScrollTop.svelte';
-  import Footer from '@/lib/components/Footer.svelte';
-  import GlobalFilters from '@/lib/components/GlobalFilters.svelte';
+  import Navbar from "$lib/components/Navbar.svelte";
+  import DataTable from "$lib/components/DataTable.svelte";
+  import ForumsTable from "$lib/components/ForumsTable.svelte";
+  import ColorModeToggle from "$lib/components/ColorModeToggle.svelte";
+  import ScrollTop from "$lib/components/ScrollTop.svelte";
+  import Footer from "$lib/components/Footer.svelte";
+  import GlobalFilters from "$lib/components/GlobalFilters.svelte";
 
-  import { moderated } from '@/lib/data/moderated';
-  import { publicIndexers } from '@/lib/data/public';
-  import { spotwebIndexers } from '@/lib/data/spotweb';
-  import { Forums } from '@/lib/data/forums';
+  import { moderated } from "$lib/data/moderated";
+  import { publicIndexers } from "$lib/data/public";
+  import { spotwebIndexers } from "$lib/data/spotweb";
+  import { Forums } from "$lib/data/forums";
 
-  import { strings, langStore } from '@/lib/i18n';
+  import { strings, langStore } from "$lib/i18n";
 
   const allRows = [...moderated, ...publicIndexers, ...spotwebIndexers];
 </script>
@@ -72,7 +72,6 @@
       <p class="mb-4 opacity-80">{strings[$langStore].sections.spotwebDesc}</p>
       <DataTable rows={spotwebIndexers} disableColumns={['payment', 'content', 'crypto']} />
     </section>
-
     <section id="forums" class="mb-12">
       <h2 class="text-primary mb-2 text-3xl font-semibold">
         {strings[$langStore].nav.navforums}
@@ -81,6 +80,7 @@
       <ForumsTable rows={Forums} />
     </section>
   </main>
+
 
   <Footer />
   <ScrollTop />
